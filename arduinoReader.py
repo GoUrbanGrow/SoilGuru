@@ -12,6 +12,9 @@ This script can be used to read out sensor data from an Arduino board.
 # Set up input deck
 ###################################################################################################
 
+# Set name of Arduino port.
+portName = "COM3"
+
 # Set up output path.
 outputPath = "/Users/kartikkumar/Desktop"
 
@@ -30,11 +33,10 @@ outputPath = "/Users/kartikkumar/Desktop"
 ###################################################################################################
 
 # Import necessary external packages.
-import os
+# import os
 import serial
 import time
-
-import calibrateMoistureSensor
+import matplotlib.pyplot as plt
 
 ###################################################################################################
 
@@ -53,8 +55,8 @@ startTime = time.time()
 ###################################################################################################
 
 # Check if output directory exists; if not, create it.
-if not os.path.exists(outputPath):
-    os.makedirs(outputPath)
+# if not os.path.exists(outputPath):
+#     os.makedirs(outputPath)
 
 ###################################################################################################
 
@@ -63,14 +65,23 @@ if not os.path.exists(outputPath):
 # Finalize timer and print elapsed time.
 ###################################################################################################
 
-ser = serial.Serial(port = '/dev/tty.usbmodem1421', baudrate=9600)
+# Open serial buffer connected to Arduino board.
+ser = serial.Serial(port = portName, baudrate=9600)
 
-print calibrateMoistureSensor.calibrateMoistureSensor(ser)
-# val = ser.readline()
-# print(val)
+# Create empty array to store data.
+readings = []
 
-#
+# Take readings and store in array.
+for i in xrange(0,10):
+	readings.append(ser.readline())
+
+print readings
+
+# Close serial buffer.
 ser.close()
+
+# Plot readings.
+plt.plot(range(0,10),readings)
 
 # Finalize timer.
 endTime = time.time()
