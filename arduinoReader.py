@@ -13,7 +13,7 @@ This script can be used to read out sensor data from an Arduino board.
 ###################################################################################################
 
 # Set name of Arduino port.
-portName = "COM3"
+portName = "/dev/tty.usbmodem1421"
 
 # Set up output path.
 outputPath = "/Users/kartikkumar/Desktop"
@@ -69,19 +69,21 @@ startTime = time.time()
 ser = serial.Serial(port = portName, baudrate=9600)
 
 # Create empty array to store data.
-readings = []
+readingsRaw = []
 
 # Take readings and store in array.
-for i in xrange(0,10):
-	readings.append(ser.readline())
+for i in xrange(0,100):
+	readingsRaw.append(ser.readline())
 
+readings = [int(x) for x in readingsRaw]
 print readings
 
 # Close serial buffer.
 ser.close()
 
 # Plot readings.
-plt.plot(range(0,10),readings)
+plt.plot(readings)
+plt.show()
 
 # Finalize timer.
 endTime = time.time()

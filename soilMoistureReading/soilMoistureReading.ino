@@ -23,7 +23,7 @@ void setup() {
 // Read from the analoge sensor and write the data to the serial buffer.
 // Delay of 5 seconds implemented to insure that buffer is flushed between succesive readings.
 void loop() {
+  delay(100);
   moisture_val = analogRead(moistureSensorPin);
   Serial.println(moisture_val);
-  delay(5000);
 }
