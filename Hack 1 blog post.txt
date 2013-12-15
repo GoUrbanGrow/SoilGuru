@@ -1,0 +1,18 @@
+Hack #1 SoilGuru //Blog post
+The first hack to get some technology up and running!
+GoUrbanGrow startup!
+The story begin when we joined up in a team in the startup weekend of the TUDelft Yes!Delft incubater, because we had more or less the same idea we wanted to put validate. Not a bad decision to team up, It resulted in the first price and getting tickets to participate in Yes!Delft’s Launchlab (link blog post 12 launch kartikkumar.com)! The shared vision is that it is valuable to use smart technology and monitor plants which than could be data analyzed and output ‘plant data’. 
+Hack #1!
+After winning this weekend, we decided to do a hack to get acquainted with each other style of work. The hack would put us to the test and help us get on the same track. This hack was the first of more to come and we named it SoilGuru. We decided to do a day hack and test a project related to the domain of GoUrbanGrow but independent of our business model. In this post we describe what we did. Also we added a tutorial with code to try the project yourself.
+//link toevoegen.
+On Saturday the 7th of December we came together in Seats2meet, where other flex workers are doing their business. We made a basic list of the setup: the hardware we will need and what software we should pre-install. We decided to make a Soil humidity sensor which would plot the soil humidity over a given time.
+As Kartik is maintaining his promotion thesis on Git and with python, he already had the software skills to. As I already developed a GrowBox Link GrowBox. To grow a plant artificially with the Arduino, I had I was familiar with the hardware side of this hack. 
+A week later on Saturday the 14th we brought the hardware, brains and software together to make this hack! We took a piece of paper and made a drawing of the experiment setup. We brainstormed and outlined the purposes of each piece of code. Coming to the conclusion we need to make one simple Arduino sketch running a loop and reading and serial writing the unprocessed sensor data via the USB. Keeping the Arduino ‘dumb’ and letting the Python script do the work. This serial output was then read by a Python script which would process the data into humidity percentage, outputting it every five seconds and visualize it into a graph. While running the code we dipped the soil sensor (made of two nails) into water. With some hassle getting the Python code read the Arduino sketch (adjusting bit rate, configuring the port and putting in a delay to flush the buffer) after a little work the setup was up and running!
+While working together we came up with many new awesome ideas for future hacks. Concluding it is a success working together, and thereby validating our own team! :)
+The next thing on the hardware side is that we want to make it possible to get this system working wireless ideally directly via the Wifi modem.
+Some of the hacks we are thinking about doing in the near future:
+-An application that could recognize the plant by using a camera, which could be used by Biologists to define which type of plant they are observing.
+-measuring the spiciness of peppers.
+-An automated plant grower that could plot data and its results are visible by others via a webserver, integrated with camera.
+-A hub that would make it possible to directly send data to the cloud, making it possible to monitor 24/7 regardless of the computer status.
+-An app that would make it possible to upload plants and other nature things online and share this with nature and wildlife spotters.
