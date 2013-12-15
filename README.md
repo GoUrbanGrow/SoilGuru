@@ -3,7 +3,7 @@ SoilGuru
 
 SoilGuru logs soil moisture readings using Ardruino and Python.
 
-this is an awesome project!  ! !! ! 
+Read more on this Hack in the Blog post and tutorial with all the hardware and code available.
 
 Authored by @MichielHuijse and @kartikkumar.
 
